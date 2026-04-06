@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>otakuoracle.com | Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="app-body">
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Profile</p>
+          <h1>Your anime account</h1>
+        </div>
+        <nav class="nav-links">
+          <a class="nav-link" href="./search.html">Search</a>
+          <a class="nav-link" href="./want-to-watch.html">Watch Later</a>
+          <a class="nav-link" href="./watched.html">Watched</a>
+          <a class="nav-link" href="./recommendations.html">Recommendations</a>
+          <a class="nav-link" href="./friends.html">Friends</a>
+          <a class="nav-link active" href="./profile.html">Profile</a>
+        </nav>
+      </header>
+
+      <main class="grid-layout">
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Account details</h2>
+            <p>Your tracked anime stays tied to this account in the browser.</p>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span class="stat-label">Name</span>
+              <strong id="profile-name">-</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Username</span>
+              <strong id="profile-username">-</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Email</span>
+              <strong id="profile-email">-</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Anime stats</h2>
+            <p>A quick snapshot of what this account has tracked so far.</p>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span class="stat-label">Watched titles</span>
+              <strong id="profile-watched-count">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Watch later</span>
+              <strong id="profile-want-count">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Average rating</span>
+              <strong id="profile-average-rating">0.0</strong>
+            </article>
+          </div>
+          <div class="tags-section">
+            <h3>Top genre</h3>
+            <div id="profile-top-genre" class="profile-tags">None yet</div>
+          </div>
+          <div class="logout-row">
+            <button id="logout-btn" type="button">Log out</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Friends</h2>
+            <p>Add friends and open each other's anime lists.</p>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span class="stat-label">Friends</span>
+              <strong id="profile-friend-count">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Incoming requests</span>
+              <strong id="profile-incoming-count">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Sent requests</span>
+              <strong id="profile-outgoing-count">0</strong>
+            </article>
+          </div>
+          <div class="quick-links">
+            <a href="./friends.html">Open friends page</a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+  <script src="./shared.js"></script>
+  <script src="./profile.js"></script>
+</body>
+</html>

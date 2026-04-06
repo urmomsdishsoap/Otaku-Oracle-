@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>otakuoracle.com | Friend Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="app-body">
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Friend profile</p>
+          <h1 id="friend-profile-title">Friend anime lists</h1>
+        </div>
+        <nav class="nav-links">
+          <a class="nav-link" href="./search.html">Search</a>
+          <a class="nav-link" href="./want-to-watch.html">Watch Later</a>
+          <a class="nav-link" href="./watched.html">Watched</a>
+          <a class="nav-link" href="./recommendations.html">Recommendations</a>
+          <a class="nav-link active" href="./friends.html">Friends</a>
+          <a class="nav-link" href="./profile.html">Profile</a>
+        </nav>
+      </header>
+
+      <main class="grid-layout">
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Watched list</h2>
+            <p id="friend-profile-meta">Only friends can view this page.</p>
+          </div>
+          <div id="friend-watched-list" class="watch-grid"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Watch later</h2>
+            <p>See what they plan to watch next.</p>
+          </div>
+          <div id="friend-want-list" class="watch-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./shared.js"></script>
+    <script src="./friend-profile.js"></script>
+  </body>
+</html>

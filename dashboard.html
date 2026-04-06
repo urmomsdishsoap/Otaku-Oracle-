@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>otakuoracle.com | Creator Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="app-body">
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Creator dashboard</p>
+          <h1>See how many people signed up and when</h1>
+        </div>
+        <nav class="nav-links">
+          <a class="nav-link" href="./search.html">Search</a>
+          <a class="nav-link" href="./want-to-watch.html">Watch Later</a>
+          <a class="nav-link" href="./watched.html">Watched</a>
+          <a class="nav-link" href="./recommendations.html">Recommendations</a>
+          <a class="nav-link" href="./profile.html">Profile</a>
+          <a class="nav-link active" href="./dashboard.html">Creator Dashboard</a>
+        </nav>
+      </header>
+
+      <main id="dashboard-auth" class="grid-single">
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Admin access required</h2>
+            <p>Enter your creator passcode to unlock the dashboard.</p>
+          </div>
+          <form id="admin-login-form" class="stack-form">
+            <label>
+              Creator passcode
+              <input id="admin-passcode" type="password" placeholder="Enter your passcode" required />
+            </label>
+            <button type="submit">Unlock dashboard</button>
+          </form>
+          <div id="admin-message" class="inline-note"></div>
+        </section>
+      </main>
+
+      <main id="dashboard-content" class="grid-layout hidden">
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Signup overview</h2>
+            <p>This demo dashboard reads signup records stored in browser storage.</p>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span class="stat-label">Total signups</span>
+              <strong id="signup-count">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Latest signup</span>
+              <strong id="latest-signup">No signups</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Active user</span>
+              <strong id="active-user">Not signed in</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Recent users</h2>
+            <p>Name, email, and signup timestamp.</p>
+          </div>
+          <div id="signup-list" class="signup-list"></div>
+        </section>
+      </main>
+    </div>
+
+  <script src="./shared.js"></script>
+  <script src="./dashboard.js"></script>
+</body>
+</html>

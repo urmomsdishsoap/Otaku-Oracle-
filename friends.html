@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>otakuoracle.com | Friends</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="app-body">
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Friends</p>
+          <h1>Add friends and view each other's anime lists</h1>
+        </div>
+        <nav class="nav-links">
+          <a class="nav-link" href="./search.html">Search</a>
+          <a class="nav-link" href="./want-to-watch.html">Watch Later</a>
+          <a class="nav-link" href="./watched.html">Watched</a>
+          <a class="nav-link" href="./recommendations.html">Recommendations</a>
+          <a class="nav-link active" href="./friends.html">Friends</a>
+          <a class="nav-link" href="./profile.html">Profile</a>
+        </nav>
+      </header>
+
+      <main class="grid-layout">
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Add a friend</h2>
+            <p>Use their username to send a request.</p>
+          </div>
+          <form id="friend-form" class="stack-form">
+            <label>
+              Friend username
+              <input id="friend-username" type="text" placeholder="@username" required />
+            </label>
+            <button type="submit">Send friend request</button>
+          </form>
+          <div id="friend-message" class="inline-note"></div>
+
+          <div class="panel-heading friends-subheading">
+            <h2>Incoming requests</h2>
+            <p>Accept or decline people who want to follow your anime lists.</p>
+          </div>
+          <div id="incoming-requests" class="friends-grid"></div>
+
+          <div class="panel-heading friends-subheading">
+            <h2>Sent requests</h2>
+            <p>Requests waiting for the other person to accept.</p>
+          </div>
+          <div id="outgoing-requests" class="friends-grid"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Your friends</h2>
+            <p>Open their profile to see watched shows, ratings, and watch later lists.</p>
+          </div>
+          <div id="friends-list" class="friends-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./shared.js"></script>
+    <script src="./friends.js"></script>
+  </body>
+</html>

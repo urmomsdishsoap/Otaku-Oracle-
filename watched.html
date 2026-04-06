@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>otakuoracle.com | Watched</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="app-body">
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Watched shows</p>
+          <h1>Rate every anime you watched out of 10</h1>
+        </div>
+        <nav class="nav-links">
+          <a class="nav-link" href="./search.html">Search</a>
+          <a class="nav-link" href="./want-to-watch.html">Watch Later</a>
+          <a class="nav-link active" href="./watched.html">Watched</a>
+          <a class="nav-link" href="./recommendations.html">Recommendations</a>
+          <a class="nav-link" href="./friends.html">Friends</a>
+          <a class="nav-link" href="./profile.html">Profile</a>
+        </nav>
+      </header>
+
+      <main class="grid-layout">
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Your watched list</h2>
+            <p>Adjust ratings, remove titles, and keep the list updated.</p>
+          </div>
+          <div id="watched-list" class="watch-grid"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Taste snapshot</h2>
+            <p>Your ratings and history shape the recommendation engine.</p>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span class="stat-label">Watched titles</span>
+              <strong id="watched-count">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Average rating</span>
+              <strong id="average-rating">0.0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Favorite genre</span>
+              <strong id="top-genre">None yet</strong>
+            </article>
+          </div>
+          <div class="tags-section">
+            <h3>Favorite themes</h3>
+            <div id="theme-profile" class="profile-tags empty-state">Rate anime to reveal your strongest themes.</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+  <script src="./shared.js"></script>
+  <script src="./watched.js"></script>
+</body>
+</html>

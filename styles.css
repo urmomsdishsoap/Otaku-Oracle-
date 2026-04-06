@@ -1,0 +1,587 @@
+:root {
+  --bg: #f4f6f8;
+  --paper: rgba(255, 255, 255, 0.94);
+  --paper-strong: #ffffff;
+  --ink: #171a1f;
+  --muted: #68707d;
+  --line: rgba(23, 26, 31, 0.1);
+  --primary: #0f7c73;
+  --primary-deep: #075e56;
+  --accent: #e8f7f0;
+  --accent-strong: #d6f2e6;
+  --shadow: 0 24px 60px rgba(26, 36, 48, 0.1);
+  --radius-lg: 28px;
+  --radius-md: 20px;
+  --radius-sm: 999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(15, 124, 115, 0.08), transparent 22%),
+    linear-gradient(180deg, #ffffff 0%, #f7faf9 48%, #f2f5f7 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: none;
+  border-radius: 18px;
+  padding: 13px 18px;
+  font-weight: 700;
+  color: #f6fffc;
+  background: linear-gradient(135deg, var(--primary), var(--primary-deep));
+  cursor: pointer;
+}
+
+input,
+select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-deep);
+}
+
+.on-dark {
+  color: rgba(225, 255, 239, 0.82);
+}
+
+.auth-body {
+  background: #091711;
+}
+
+.auth-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(420px, 0.75fr);
+}
+
+.auth-visual {
+  position: relative;
+  overflow: hidden;
+  background-color: #130d0d;
+  background-image:
+    linear-gradient(90deg, rgba(14, 10, 10, 0.14) 0%, rgba(14, 10, 10, 0.05) 40%, rgba(14, 10, 10, 0.4) 100%),
+    url("./assets/yuta-okkotsu.avif"),
+    radial-gradient(circle at 22% 36%, rgba(255, 188, 107, 0.34), transparent 24%),
+    linear-gradient(180deg, #1a1212 0%, #241717 48%, #120c0d 100%);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: center center, center center, left center, center center;
+  background-size: cover, cover, cover, cover;
+}
+
+.auth-overlay {
+  position: absolute;
+  inset: 0;
+  background: none;
+}
+
+.auth-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 22% 38%, rgba(255, 232, 170, 0.16), transparent 18%),
+    linear-gradient(180deg, rgba(19, 10, 10, 0.04), rgba(12, 7, 8, 0.24));
+}
+
+.auth-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.03), transparent 42%),
+    linear-gradient(180deg, rgba(5, 10, 18, 0.02) 12%, rgba(5, 10, 18, 0.52) 100%);
+}
+
+.auth-copy {
+  position: absolute;
+  inset: auto 40px 34px 40px;
+  z-index: 2;
+  max-width: 430px;
+  color: white;
+  padding: 22px 24px;
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(18, 10, 10, 0.14), rgba(18, 10, 10, 0.48));
+  backdrop-filter: blur(8px);
+}
+
+.auth-copy h1 {
+  margin: 0;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(2.6rem, 4vw, 4.7rem);
+  line-height: 0.92;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.42);
+}
+
+.auth-copy p:last-child {
+  margin: 18px 0 0;
+  color: rgba(231, 255, 240, 0.82);
+  line-height: 1.7;
+}
+
+.moon-disc,
+.mist-layer,
+.swordsman,
+.sword {
+  display: none;
+}
+
+
+.auth-panel,
+.panel {
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.auth-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 44px;
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.brand-row p {
+  margin: 2px 0 0;
+  color: var(--muted);
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #073c38, #0f7c73);
+  color: white;
+  font-weight: 800;
+}
+
+.panel-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 22px;
+}
+
+.panel-heading h2,
+.panel-heading p,
+.tags-section h3 {
+  margin: 0;
+}
+
+.panel-heading p,
+.inline-note,
+.profile-tags,
+.stat-label,
+.meta,
+.reason-list,
+.signup-item p {
+  color: var(--muted);
+}
+
+.summary-block {
+  margin-top: 8px;
+}
+
+.summary-block .meta {
+  margin: 0;
+}
+
+.summary-toggle {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--primary-deep);
+  font-weight: 700;
+  text-align: left;
+}
+
+.inline-toggle {
+  display: inline;
+  margin-left: 4px;
+}
+
+.stack-form {
+  display: grid;
+  gap: 14px;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.auth-tab {
+  background: rgba(15, 124, 115, 0.08);
+  color: var(--primary-deep);
+}
+
+.auth-tab.active {
+  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--primary-deep));
+}
+
+.auth-form-panel.hidden {
+  display: none;
+}
+
+.stack-form label {
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.inline-note {
+  min-height: 24px;
+  margin-top: 14px;
+}
+
+.load-more-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.logout-row {
+  margin-top: 18px;
+}
+
+.quick-links {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+  font-weight: 600;
+  color: var(--primary-deep);
+}
+
+.app-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 36px 0 64px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.topbar h1 {
+  margin: 0;
+  max-width: 720px;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.02;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-link {
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(15, 124, 115, 0.08);
+  color: var(--primary-deep);
+  font-weight: 700;
+}
+
+.nav-link.active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-deep));
+  color: white;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 22px;
+}
+
+.grid-single {
+  display: grid;
+}
+
+.hidden {
+  display: none;
+}
+
+.panel {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: var(--radius-lg);
+}
+
+.search-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.search-results,
+.watch-grid,
+.recommendation-list,
+.signup-list,
+.profile-tags,
+.friends-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.search-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.anime-card,
+.watch-card,
+.recommendation-card,
+.signup-item,
+.stat-card,
+.friend-card {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--paper-strong);
+}
+
+.anime-card,
+.watch-card,
+.recommendation-card {
+  overflow: hidden;
+}
+
+.anime-poster {
+  aspect-ratio: 2 / 3;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  background: linear-gradient(180deg, #dfe6eb 0%, #f6f8fa 100%);
+}
+
+.anime-poster-fallback {
+  aspect-ratio: 2 / 3;
+  display: grid;
+  place-items: end start;
+  padding: 14px;
+  color: white;
+  font-family: "Sora", sans-serif;
+  font-size: 1rem;
+  line-height: 1.05;
+}
+
+.anime-card-content,
+.watch-card-content,
+.recommendation-card-content,
+.signup-item,
+.friend-card {
+  padding: 14px;
+}
+
+.friend-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.friend-card strong,
+.friend-card p {
+  margin: 0;
+}
+
+.friend-card p + p {
+  margin-top: 6px;
+}
+
+.friend-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.ghost-button {
+  background: rgba(15, 124, 115, 0.08);
+  color: var(--primary-deep);
+}
+
+.friends-subheading {
+  margin-top: 24px;
+}
+
+.anime-card h3,
+.watch-card h3,
+.recommendation-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.meta {
+  margin: 8px 0 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.chip-row,
+.detail-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.chip {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: var(--primary-deep);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.stat-card {
+  padding: 18px;
+}
+
+.stat-card strong {
+  display: block;
+  margin-top: 10px;
+  font-family: "Sora", sans-serif;
+  font-size: 1.2rem;
+}
+
+.rating-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.rating-input {
+  width: 96px;
+}
+
+.watch-grid,
+.signup-list,
+.recommendation-list {
+  grid-template-columns: 1fr;
+}
+
+.watch-card,
+.recommendation-card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+}
+
+.watch-card .anime-poster,
+.recommendation-card .anime-poster,
+.watch-card .anime-poster-fallback,
+.recommendation-card .anime-poster-fallback {
+  height: 100%;
+}
+
+.reason-list {
+  margin: 14px 0 0;
+  padding-left: 18px;
+}
+
+.empty-state {
+  padding: 18px;
+  border: 1px dashed var(--line);
+  border-radius: 20px;
+  background: rgba(15, 124, 115, 0.03);
+  color: var(--muted);
+}
+
+@media (max-width: 980px) {
+  .auth-layout,
+  .grid-layout,
+  .stats-grid,
+  .search-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-visual {
+    min-height: 460px;
+    background-position: center center, center top, center top, center center;
+    background-size: cover, cover, cover, cover;
+  }
+
+  .topbar {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    width: min(100% - 20px, 1180px);
+  }
+
+  .auth-panel,
+  .panel {
+    padding: 18px;
+  }
+
+  .search-row,
+  .rating-row {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-copy {
+    inset: auto 20px 20px 20px;
+  }
+
+  .watch-card,
+  .recommendation-card {
+    grid-template-columns: 1fr;
+  }
+}

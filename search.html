@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>otakuoracle.com | Search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="app-body">
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Anime search</p>
+          <h1>Build your anime list</h1>
+        </div>
+        <nav class="nav-links">
+          <a class="nav-link active" href="./search.html">Search</a>
+          <a class="nav-link" href="./want-to-watch.html">Watch Later</a>
+          <a class="nav-link" href="./watched.html">Watched</a>
+          <a class="nav-link" href="./recommendations.html">Recommendations</a>
+          <a class="nav-link" href="./friends.html">Friends</a>
+          <a class="nav-link" href="./profile.html">Profile</a>
+        </nav>
+      </header>
+
+      <main class="grid-single">
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Search anime</h2>
+            <p>Search anime</p>
+          </div>
+
+          <div class="search-row">
+            <input id="anime-search" type="text" placeholder="Search Death Note, fantasy, emotional, sports..." />
+            <button id="add-random-btn" type="button">Add Random</button>
+          </div>
+
+          <div id="search-meta" class="inline-note"></div>
+          <div id="search-results" class="search-results search-grid"></div>
+          <div class="load-more-row">
+            <button id="load-more-btn" class="hidden" type="button">Load more results</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+  <script src="./shared.js"></script>
+  <script src="./search.js"></script>
+</body>
+</html>
